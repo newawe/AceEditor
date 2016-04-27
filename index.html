@@ -79,7 +79,7 @@
       document.getElementById('demo').innerHTML = code;
       
       }, 100);
-    function save() {
+    function download() {
     var code = editor.getValue();
     var encodedData = btoa(code);
     window.location.assign("data:text/html;base64,"+encodedData)
