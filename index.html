@@ -61,6 +61,8 @@
     //var code = editor.getValue();
     //document.getElementById('demo').innerHTML = code;
     //}
+    var saved = localStorage.getItem('savedcode');
+    editor.setValue(saved);
     function setCookie(cname, cvalue, exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -79,6 +81,11 @@
       document.getElementById('demo').innerHTML = code;
       
       }, 100);
+      
+    function localsave() {
+      var code = editor.getValue();
+      localStorage.setItem('savedcode', code);
+    }
     function download() {
     var code = editor.getValue();
     var encodedData = btoa(code);
