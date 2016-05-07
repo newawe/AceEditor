@@ -92,13 +92,54 @@
       localStorage.setItem('savedcode', code);
     }
     function updateLive() {
-    var code = editor.getValue();
-    document.getElementById('demo').src = "http://newawe.github.io/Sandbox/html.html?code="+code;
+        var code = editor.getValue();
+
+        //Switch to interpret language. By defualt HTML. To add a language add a case. Default case is html.
+        switch(lang.value){
+            case "html":
+                document.getElementById('demo').src = "http://newawe.github.io/Sandbox/html.html?code="+code;
+                break;
+            case "php":
+                document.getElementById('demo').src = "http://ronskons.tk/php.php?code="+code;
+                break;
+            case "python":
+                document.getElementById('demo').src = "http://newawe.github.io/Sandbox/python.html?code="+code;
+                break;
+            default:
+                document.getElementById('demo').src = "http://newawe.github.io/Sandbox/html.html?code="+code;
+                break;
+
+
+        }
+
     }
     function download() {
     var code = editor.getValue();
     var encodedData = btoa(code);
-    downloadURI("data:text/html;base64,"+encodedData, "download.html");
+        //Language specific switch. HTML downloads "download.html", PHP downloads "download.php", etc. Defaults to .txt
+        switch(lang.value){
+            case "html":
+                downloadURI("data:text/html;base64,"+encodedData, "download.html");
+                break;
+            case "php":
+                downloadURI("data:text/html;base64,"+encodedData, "download.php");
+                break;
+            case "python":
+                downloadURI("data:text/html;base64,"+encodedData, "download.py");
+                break;
+            case "javascript":
+                downloadURI("data:text/html;base64,"+encodedData, "download.js");
+                break;
+            case "css":
+                downloadURI("data:text/html;base64,"+encodedData, "download.css");
+                break;
+            default:
+                downloadURI("data:text/html;base64,"+encodedData, "download.txt");
+                break;
+
+
+        }
+
 
     //data:application/octet-stream;charset=utf-16le;base64,
     }
