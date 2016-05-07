@@ -98,7 +98,8 @@
     function download() {
     var code = editor.getValue();
     var encodedData = btoa(code);
-    window.location.assign("data:text/html;base64,"+encodedData)
+    downloadURI("data:text/html;base64,"+encodedData, "download.html");
+
     //data:application/octet-stream;charset=utf-16le;base64,
     }
 
