@@ -98,10 +98,16 @@
     function download() {
     var code = editor.getValue();
     var encodedData = btoa(code);
-    window.location.assign("data:text/html;base64,"+encodedData)
+    downloadURI("data:text/html;base64,"+encodedData, "download.html");
+
     //data:application/octet-stream;charset=utf-16le;base64,
     }
-
+function downloadURI(uri, name) {
+  var link = document.createElement("a");
+  link.download = name;
+  link.href = uri;
+  link.click();
+}
     //function cookie() {
     //var code = editor.getValue();
     //var encodedData = btoa(code);
