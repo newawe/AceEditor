@@ -136,6 +136,9 @@
             case "css":
                 downloadURI("data:text/html;base64,"+encodedData, "download.css");
                 break;
+            case "mysql":
+                downloadURI("data:text/html;base64,"+encodedData, "download.sql");
+                break;
             default:
                 downloadURI("data:text/html;base64,"+encodedData, "download.txt");
                 break;
