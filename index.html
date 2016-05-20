@@ -94,7 +94,7 @@
     function updateLive() {
         var code = editor.getValue();
 
-        //Switch to interpret language. By defualt HTML. To add a language add a case. Default case is html.
+        //Switch to interpret language. By defualt HTML. To add a language add a case. Default case is a message.
         switch(lang.value){
             case "html":
                 document.getElementById('demo').src = "http://newawe.github.io/Sandbox/html.html?code="+code;
@@ -112,7 +112,7 @@
                 document.getElementById('demo').src = "http://newawe.github.io/Sandbox/javascript.html?code="+code;
                 break;
             default:
-                document.getElementById('demo').src = "http://newawe.github.io/Sandbox/html.html?code="+code;
+                document.getElementById('demo').src = "http://newawe.github.io/Sandbox/html.html?code=<pre>This language is currently not supported for live testing.";
                 break;
 
 
