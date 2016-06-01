@@ -86,7 +86,6 @@
     //document.getElementById('demo').innerHTML = code;
     //}
     
-
     function setCookie(cname, cvalue, exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -102,7 +101,6 @@
     }
     window.setInterval(function(){
       var code = editor.getValue();
-
       }, 100);
     
     function loadLocal() {
@@ -115,7 +113,6 @@
     }
     function updateLive() {
         var code = editor.getValue();
-
         //Switch to interpret language. By defualt HTML. To add a language add a case. Default case is a message.
         switch(lang.value){
             case "html":
@@ -145,10 +142,7 @@
             default:
                 document.getElementById('demo').src = "http://newawe.github.io/Sandbox/html.html?code=<pre>This language is currently not supported for <br>live testing.";
                 break;
-
-
         }
-
     }
     function download() {
     var code = editor.getValue();
@@ -182,11 +176,7 @@
             default:
                 downloadURI("data:text/html;base64,"+encodedData, "download.txt");
                 break;
-
-
         }
-
-
     //data:application/octet-stream;charset=utf-16le;base64,
     }
 function downloadURI(uri, name) {
