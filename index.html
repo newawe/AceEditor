@@ -12,7 +12,6 @@
     <style type="text/css" media="screen">
       body {
         overflow: hidden;
-
       }
       button{
         width: 100px;
@@ -48,7 +47,6 @@
         background-color: #FFFFFF;
       }
       .aceButton {
-
         color: white;
         background-color: #00A3C6;
         border: none;
@@ -56,15 +54,11 @@
         height: 40px;
         vertical-align: middle;
         box-shadow: 0 0 2px #000000;
-
       }
       .aceButton:hover{
-
         box-shadow: 0 0 10px #000000;
         background-color: #00B0D0;
-
       }
-
       /*Check box haxs*/
       label input {
         visibility: hidden;
@@ -137,7 +131,6 @@
       //var code = editor.getValue();
       //document.getElementById('demo').innerHTML = code;
       //}
-
       function setCookie(cname, cvalue, exdays) {
         var d = new Date();
         d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -147,14 +140,12 @@
       function updateLang() {
         var lang = document.getElementById("lang");
         var langvalue = lang.options[lang.selectedIndex].value;
-
         editor.session.setMode("ace/mode/"+langvalue);
         console.log(langvalue)
       }
       window.setInterval(function(){
         var code = editor.getValue();
       }, 100);
-
       function loadLocal() {
         var saved = localStorage.getItem('savedcode');
         editor.setValue(saved);
@@ -244,6 +235,6 @@
       //setCookie("data",encodedData,364);
       //data:application/octet-stream;charset=utf-16le;base64,
       //}
-    
+    </script>
   </body>
 </html>
