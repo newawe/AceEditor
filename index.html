@@ -127,7 +127,7 @@
       <p>Code execution courtesy of <a class="regLink" href="http://rextester.com/" target="_blank">rextester.com</a></p>
     </div>
     <script src="src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
-    <script>
+    
       var editor = ace.edit("editor");
       editor.setTheme("ace/theme/clouds");
       editor.session.setMode("ace/mode/html");
@@ -189,6 +189,7 @@
             document.getElementById('demo').src = "http://ronskons.tk/java.php?code="+code;
             break;
           case "python":
+            code = code.replace("/\n/g", "<br />");
             document.getElementById('demo').src = "http://ronskons.tk/python.php?code="+code;
             break;
           default:
@@ -243,6 +244,6 @@
       //setCookie("data",encodedData,364);
       //data:application/octet-stream;charset=utf-16le;base64,
       //}
-    </script>
+    
   </body>
 </html>
