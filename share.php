@@ -22,4 +22,4 @@ mysqli_query($conn, $sql);
 
 
 //Redirect user back
-header("Location: editor.newawe.com/index.html?code=$code");
+header("Location: http://editor.newawe.com/index.html?code=$code");
