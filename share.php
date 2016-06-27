@@ -17,9 +17,11 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql = "INSERT INTO `BMS_id`.`Newawe_Project_Test` (`Code`, `ID`, `User`, `Lang`, `Name`, `Description`) VALUES (\'$code\', NULL, \'$user\', \'$lang\', \'$name\', \'$desc\');";
+$sql = "INSERT INTO `BMS_id`.`Newawe_Project_Test` (`Code`, `ID`, `User`, `Lang`, `Name`, `Description`) VALUES (\'{$code}\', NULL, \'{$user}\', \'{$lang}\', \'{$name}\', \'{$desc}\');";
 mysqli_query($conn, $sql);
 
 
 //Redirect user back
-header("Location: http://editor.newawe.com/index.html?code=$code");
+echo '<script type="text/javascript">
+           window.location = "http://editor.newawe.com/?code="'.$code.'
+      </script>';
