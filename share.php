@@ -8,10 +8,10 @@ $user = "test"; //TODO: Replace with actual code
 
 
 
-$servername = "localhost";
-$username = "BMS_id";
-$password = "Password1";
-$dbname = "BMS_id";
+$servername = "*";
+$username = "*";
+$password = "*";
+$dbname = "*";
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
 if (!$conn) {
